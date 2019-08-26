@@ -1,6 +1,16 @@
 <!DOCTYPE htm11> 
 <htm1> 
 
+  <style>
+#myAnimation {
+  background-image: url(images/propic.jpg);
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+  
   <head>
      <title>Aseel Ahmed </title> 
      
@@ -10,9 +20,7 @@
      <span> Aseel Ahmed </span> 
      <p> student at columbia university. </p> 
      <h1 style="background-color:DodgerBlue;">Hello Sir</h1>
-     <img class= "cool"
-          src = "https://assocagencies.com/wp-content/uploads/2017/06/shutterstock_1012719211.jpg" 
-                 width="300" height="320">
+
      <img src="pic_trulli.jpg" alt="Trulli" width="500" height="333">
      <body style="background-color:#0000FF;">
      <img src="img_girl.jpg" alt="Girl in a jacket width="300" height="320">
@@ -25,7 +33,29 @@
     </div>                                                            
     </div> 
     
-    
+    <p>
+<button onclick="myMove()">Click Me</button> 
+</p>
+
+<div id ="myAnimation"></div>
+
+<script>
+function myMove() {
+  var elem = document.getElementById("myAnimation");   
+  var pos = 0;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
+</script>
+</body>
     
 </htm1>
      
